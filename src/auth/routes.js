@@ -8,9 +8,6 @@ const User = require('./models/users.js');
 const basicAuth = require('./middleware/basic.js');
 const bearerAuth = require('./middleware/bearer.js');
 
-const app = express();
-const morgan = require('morgan');
-app.use(morgan('dev'));
 
 authRouter.post('/signup', async (req, res, next) => {
   try {
@@ -27,6 +24,7 @@ authRouter.post('/signup', async (req, res, next) => {
 });
 
 authRouter.post('/signin', basicAuth, (request, response, next) => {
+  console.log(request.user,'rout sign in ')
   const user = {
     user: request.user,
     token: request.user.token,
