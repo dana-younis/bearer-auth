@@ -8,6 +8,10 @@ At this stage, our authentication server can allow a user to build an account an
 ![uml](uml.png)
 
 ## Links
+https://github.com/dana-younis/bearer-auth
+
+https://lab777.herokuapp.com/
+
 
 
 
