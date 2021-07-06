@@ -1,9 +1,9 @@
 'use strict';
+require('dotenv').config();
 // process.env.SECRET = dana;
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
 
 const users = new mongoose.Schema(
   {
@@ -34,6 +34,7 @@ users.pre('save', async function () {
 // BASIC AUTH
 users.statics.authenticateBasic = async function (username, password) {
   // to git the user name
+ 
   const user = await this.findOne({ username });
   //to check the password correct
   console.log('user', user);
