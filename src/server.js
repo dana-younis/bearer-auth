@@ -13,7 +13,9 @@ const authRoutes = require('./auth/routes.js');
 
 // Prepare the express app
 const app = express();
-
+app.get('/', (req, res) => {
+  res.status(200).send('home');
+});
 // App Level MW
 app.use(cors());
 app.use(morgan('dev'));
